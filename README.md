@@ -40,7 +40,7 @@ df_a = df_a[["Date", "Worker", "Task", "Manager", "Tasks Completed"]]
 
 
 
-#----------------------------- Task B ------------------------------------------------------------------------------
+**#----------------------------- Task B ------------------------------------------------------------------------------**
 
 df_b = pd.read_csv("TaskB.csv") # Load CSV for Task B
 df_b["Unnamed: 0"] = df_b["Unnamed: 0"].ffill() # Fill in missing dates by cipying doen previous date
@@ -58,8 +58,7 @@ df_b["Date"] = df_b["Date"].dt.strftime("%Y-%m")
 # Rename columns
 df_b = df_b[["Date", "Worker", "Task", "Manager", "Tasks Completed"]]
 
-#---------------------------- Task C ------------------------------------------------------------------------------
-
+**#---------------------------- Task C ------------------------------------------------------------------------------**
 df_c = pd.read_csv("TaskC.csv")# Load Task C CSV
 df_c = df_c.melt(id_vars=["Unnamed: 0"], var_name="Worker", value_name="Tasks Completed")# Convert wide format (months as rows, workers as columns) to long format
 df_c.rename(columns={"Unnamed: 0": "Date"}, inplace=True) # Rename columns
